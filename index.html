@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salvation Army Prince George - Making a Difference in Our Community</title>
-	
-	
+    
     <style>
         * {
             margin: 0;
@@ -24,6 +23,7 @@
         iframe {
             border: none;
             display: block;
+            background-color: transparent; /* Ensures no white flash */
         }
 
         /* Header with Leaderboard Ad */
@@ -40,7 +40,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 4px;
         }
 
         /* Main Header */
@@ -70,23 +69,6 @@
             opacity: 0.95;
         }
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 30px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: opacity 0.3s;
-        }
-
-        nav a:hover {
-            opacity: 0.8;
-        }
-
         /* Main Content Area */
         .main-wrapper {
             max-width: 1200px;
@@ -104,32 +86,10 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
-        .content-with-image {
-            display: grid;
-            gap: 30px;
-            align-items: start;
-        }
-
         .content-text h2 {
             color: #c8102e;
             font-size: 2em;
             margin-bottom: 20px;
-        }
-
-        .content-text p {
-            margin-bottom: 15px;
-            font-size: 1.05em;
-            color: #555;
-        }
-
-        .content-text ul {
-            margin: 20px 0;
-            padding-left: 20px;
-        }
-
-        .content-text li {
-            margin-bottom: 10px;
-            color: #555;
         }
 
         .cta-button {
@@ -141,43 +101,12 @@
             border-radius: 5px;
             font-weight: bold;
             margin-top: 20px;
-            transition: background-color 0.3s;
         }
 
-        .cta-button:hover {
-            background-color: #8b0a1f;
-        }
-
-        /* Sidebar Ad */
+        /* Sidebar Ad Area */
         .sidebar {
             position: sticky;
             top: 20px;
-        }
-
-        .ad-sidebar {
-            width: 160px;
-            height: 600px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* Bottom Ad */
-        .bottom-ad-section {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-            text-align: center;
-        }
-
-        .ad-bottom {
-            width: 728px;
-            height: 90px;
-            margin: 0 auto;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         /* Footer */
@@ -188,91 +117,29 @@
             margin-top: 60px;
         }
 
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-        }
-
-        .footer-section h3 {
-            color: #c8102e;
-            margin-bottom: 15px;
-        }
-
-        .footer-section p,
-        .footer-section a {
-            color: #ccc;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        .footer-section a:hover {
-            color: white;
-        }
-
         .footer-bottom {
             text-align: center;
-            margin-top: 30px;
             padding-top: 20px;
-            border-top: 1px solid #333;
             color: #999;
         }
 
-        /* Responsive Design */
         @media (max-width: 968px) {
-            .main-wrapper {
-                grid-template-columns: 1fr;
-            }
-
-            .content-with-image {
-                grid-template-columns: 1fr;
-            }
-
-            .sidebar {
-                position: static;
-            }
-
-            .ad-leaderboard,
-            .ad-bottom {
-                width: 100%;
-                max-width: 728px;
-            }
-
-            .header-content {
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            nav ul {
-                flex-direction: column;
-                gap: 10px;
-                text-align: center;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
+            .main-wrapper { grid-template-columns: 1fr; }
+            .ad-leaderboard { width: 100%; height: auto; }
         }
     </style>
 </head>
 <body>
-    <!-- Top Leaderboard Ad (728x90) - Ad 1 -->
+
     <div class="header-ad">
         <div class="ad-leaderboard">
-            <div style="position: relative; width: 728px; height: 90px; margin: 0 auto;">
-                <iframe src="https://salvationarmy-banner-ads.vercel.app/Ads1/ad-1.html" width="728" height="90" scrolling="no" style="position: absolute; top: 0; left: 0;"></iframe>
-                <!-- <a href="https://www.sapg.ca/get-involved/become-a-volunteer/" target="_blank" 
-                   style="position: absolute; top: 0; left: 0; width: 728px; height: 90px; display: block; z-index: 10; cursor: pointer;">
-                </a> -->
-            </div>
+            <iframe src="https://salvationarmy-banner-ads.vercel.app/Ads1/ad-1.html" 
+                    width="728" 
+                    height="90" 
+                    scrolling="no"></iframe>
         </div>
     </div>
 
-    <!-- Main Header -->
     <header>
         <div class="header-content">
             <div class="logo-section">
@@ -282,69 +149,37 @@
         </div>
     </header>
 
-    <!-- Main Content Area with Sidebar -->
     <div class="main-wrapper">
-        <!-- Left Content -->
         <div class="content-area">
-            <div class="content-with-image">
-                <!-- Content Text -->
-                <div class="content-text">
-                    <h2>Making a Difference in Prince George</h2>
-                    <p>The Salvation Army has been serving the Prince George community for decades, providing hope and support to those in need. Our mission is to meet human needs without discrimination.</p>
-                    
-                    <p>Through our various programs and services, we help thousands of individuals and families each year by providing:</p>
-                    
-                    <ul>
-                        <li><strong>Emergency Food Services</strong> - Food bank and meal programs</li>
-                        <li><strong>Housing Support</strong> - Emergency shelter and transitional housing</li>
-                        <li><strong>Community Programs</strong> - Youth programs, senior services</li>
-                        <li><strong>Thrift Store</strong> - Affordable clothing and household items</li>
-                        <li><strong>Disaster Relief</strong> - Emergency response and recovery</li>
-                    </ul>
-
-                    <p>Every donation, every volunteer hour, and every act of kindness helps us continue our mission in Prince George and the surrounding communities.</p>
-
-                    <a href="#" class="cta-button">Learn More About Our Programs</a>
-                </div>
+            <div class="content-text">
+                <h2>Making a Difference in Prince George</h2>
+                <p>The Salvation Army has been serving the Prince George community for decades...</p>
+                <a href="#" class="cta-button">Learn More About Our Programs</a>
             </div>
-            <br>
-            <div>
-                <div style="position: relative; width: 300px; height: 250px;">
-                    <iframe src="Ads3/ad-3.html" width="300" height="250" scrolling="no" 
-                            style="position: absolute; top: 0; left: 0; border: none;"></iframe>
-                    <a href="https://www.sapg.ca/get-involved/red-kettle-volunteer/" target="_blank" 
-                       style="position: absolute; top: 0; left: 0; width: 300px; height: 250px; 
-                              display: block; cursor: pointer; z-index: 10;" 
-                       aria-label="Volunteer for Red Kettle Campaign">
-                    </a>
-                </div>
-            </div>
-            <!-- Additional Content -->
-            <div style="margin-top: 40px;">
-                <h2 style="color: #c8102e; margin-bottom: 20px;">Get Involved Today</h2>
-                <p style="color: #555; font-size: 1.05em;">Whether you want to volunteer your time, donate to our cause, or shop at our thrift store, there are many ways to support the Salvation Army Prince George. Together, we can make a lasting impact in our community.</p>
+
+            <br><br>
+
+            <div class="ad-container">
+                <iframe src="https://salvationarmy-banner-ads.vercel.app/Ads3/ad-3.html" 
+                        width="300" 
+                        height="250" 
+                        scrolling="no"></iframe>
             </div>
         </div>
 
-        <!-- Right Sidebar Ad (300x250) - Ad 2 -->
         <aside class="sidebar">
-            <div class="ad-sidebar">
-                <div style="position: relative; width: 160px; height: 600px;">
-                    <iframe src="https://salvationarmy-banner-ads.vercel.app/Ads2/ads-2.html" width="160" height="600" scrolling="no" 
-                            style="position: absolute; top: 0; left: 0; border: none;"></iframe>
-                    <!-- <a href="https://www.sapg.ca/main-donation/" target="_blank" 
-                       style="position: absolute; top: 0; left: 0; width: 160px; height: 600px; 
-                              display: block; cursor: pointer; z-index: 10;" 
-                       aria-label="Donate to Salvation Army">
-                    </a> -->
-                </div>             
-            </div>
+            <iframe src="https://salvationarmy-banner-ads.vercel.app/Ads2/ads-2.html" 
+                    width="160" 
+                    height="600" 
+                    scrolling="no"></iframe>
         </aside>
     </div>
+
     <footer>
         <div class="footer-bottom">
-            <p>&copy; 2025 The Salvation Army Prince George. All rights reserved. | WEGD 231 Assignment by Emeliza Ducos</p>
+            <p>&copy; 2025 The Salvation Army Prince George. WEGD 231 Assignment by Emeliza Ducos</p>
         </div>
     </footer>
+
 </body>
 </html>
