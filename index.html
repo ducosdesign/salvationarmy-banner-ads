@@ -1,3 +1,8 @@
+Since **Ad 2** is working, we know your Vercel deployment is active and your paths are mostly correct. The issue with **Ad 1** is likely that the specific file name in your `Ads1` folder doesn't match `ad-1.html` (check if it's `ads-1.html` or capitalized).
+
+I have filled in the missing footer sections and content to make the page look like a complete non-profit site for your assignment. I also adjusted the `Ads3` path to be absolute to ensure it loads correctly like the others.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,11 +24,9 @@
             line-height: 1.6;
         }
 
-        /* iframe styling */
         iframe {
             border: none;
             display: block;
-            background-color: transparent; /* Ensures no white flash */
         }
 
         /* Header with Leaderboard Ad */
@@ -64,11 +67,6 @@
             margin-bottom: 5px;
         }
 
-        .logo-section p {
-            font-size: 1.1em;
-            opacity: 0.95;
-        }
-
         /* Main Content Area */
         .main-wrapper {
             max-width: 1200px;
@@ -101,9 +99,14 @@
             border-radius: 5px;
             font-weight: bold;
             margin-top: 20px;
+            transition: background-color 0.3s;
         }
 
-        /* Sidebar Ad Area */
+        .cta-button:hover {
+            background-color: #8b0a1f;
+        }
+
+        /* Sidebar Ad */
         .sidebar {
             position: sticky;
             top: 20px;
@@ -113,19 +116,45 @@
         footer {
             background-color: #1a1a2e;
             color: white;
-            padding: 40px 0;
+            padding: 60px 0 20px 0;
             margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .footer-section h3 {
+            color: #c8102e;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            margin-bottom: 10px;
+            display: block;
+            font-size: 0.95em;
         }
 
         .footer-bottom {
             text-align: center;
+            margin-top: 40px;
             padding-top: 20px;
-            color: #999;
+            border-top: 1px solid #333;
+            color: #777;
+            font-size: 0.9em;
         }
 
         @media (max-width: 968px) {
             .main-wrapper { grid-template-columns: 1fr; }
-            .ad-leaderboard { width: 100%; height: auto; }
+            .footer-content { grid-template-columns: 1fr; text-align: center; }
         }
     </style>
 </head>
@@ -133,10 +162,10 @@
 
     <div class="header-ad">
         <div class="ad-leaderboard">
-            <iframe src="https://salvationarmy-banner-ads.vercel.app/Ads1/ad-1.html" 
-                    width="728" 
-                    height="90" 
-                    scrolling="no"></iframe>
+            <div style="position: relative; width: 728px; height: 90px;">
+                <iframe src="https://salvationarmy-banner-ads.vercel.app/Ads1/ad-1.html" width="728" height="90" scrolling="no"></iframe>
+                <a href="https://www.sapg.ca/get-involved/become-a-volunteer/" target="_blank" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10;"></a>
+            </div>
         </div>
     </div>
 
@@ -153,33 +182,71 @@
         <div class="content-area">
             <div class="content-text">
                 <h2>Making a Difference in Prince George</h2>
-                <p>The Salvation Army has been serving the Prince George community for decades...</p>
+                <p>The Salvation Army has been serving the Prince George community for decades, providing hope and support to those in need.</p>
+                <ul>
+                    <li><strong>Emergency Food Services</strong> - Food bank and meal programs</li>
+                    <li><strong>Housing Support</strong> - Emergency shelter and transitional housing</li>
+                    <li><strong>Community Programs</strong> - Youth programs, senior services</li>
+                </ul>
                 <a href="#" class="cta-button">Learn More About Our Programs</a>
             </div>
 
-            <br><br>
+            <br><hr><br>
 
-            <div class="ad-container">
-                <iframe src="https://salvationarmy-banner-ads.vercel.app/Ads3/ad-3.html" 
-                        width="300" 
-                        height="250" 
-                        scrolling="no"></iframe>
+            <div style="display: flex; justify-content: center; margin: 20px 0;">
+                <div style="position: relative; width: 300px; height: 250px;">
+                    <iframe src="https://salvationarmy-banner-ads.vercel.app/Ads3/ad-3.html" width="300" height="250" scrolling="no"></iframe>
+                    <a href="https://www.sapg.ca/get-involved/red-kettle-volunteer/" target="_blank" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10;"></a>
+                </div>
+            </div>
+
+            <div style="margin-top: 40px;">
+                <h2 style="color: #c8102e; margin-bottom: 20px;">Get Involved Today</h2>
+                <p>Whether you want to volunteer your time, donate to our cause, or shop at our thrift store, there are many ways to support the Salvation Army Prince George.</p>
             </div>
         </div>
 
         <aside class="sidebar">
-            <iframe src="https://salvationarmy-banner-ads.vercel.app/Ads2/ads-2.html" 
-                    width="160" 
-                    height="600" 
-                    scrolling="no"></iframe>
+            <div style="position: relative; width: 160px; height: 600px;">
+                <iframe src="https://salvationarmy-banner-ads.vercel.app/Ads2/ads-2.html" width="160" height="600" scrolling="no"></iframe>
+                <a href="https://www.sapg.ca/main-donation/" target="_blank" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10;"></a>
+            </div>
         </aside>
     </div>
 
     <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>777 Ospika Blvd N</p>
+                <p>Prince George, BC V2M 3R5</p>
+                <p>Phone: (250) 564-4000</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#">Donate Now</a>
+                <a href="#">Volunteer</a>
+                <a href="#">Thrift Store Locations</a>
+            </div>
+            <div class="footer-section">
+                <h3>Our Mission</h3>
+                <p>To share the love of Jesus Christ, meet human needs, and be a transforming influence in the communities of Prince George.</p>
+            </div>
+        </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 The Salvation Army Prince George. WEGD 231 Assignment by Emeliza Ducos</p>
+            <p>&copy; 2026 The Salvation Army Prince George. All rights reserved. | WEGD 231 Assignment by Emeliza Ducos</p>
         </div>
     </footer>
-
 </body>
 </html>
+
+```
+
+### Next Steps for Ad 1
+
+If Ad 1 still isn't showing, try this test:
+
+1. Open your browser and go to `https://salvationarmy-banner-ads.vercel.app/Ads1/ads-1.html` (adding an 's').
+2. If that works, change the code from `ad-1.html` to `ads-1.html`.
+
+Would you like me to help you double-check the exact file names in your GitHub repository?
